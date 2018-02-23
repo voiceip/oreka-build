@@ -8,7 +8,6 @@ CFLAGS='-fPIC' make all
 
 
 #make orkbase
-
 cd /oreka-src/orkbasecxx
 libtoolize --force
 automake -a
@@ -16,6 +15,15 @@ make -f Makefile.cvs
 ./configure
 make
 make install
+
+
+#g729
+mkdir -p /opt/bcg729
+git clone --depth 1 https://github.com/BelledonneCommunications/bcg729.git /opt/bcg729
+cd /opt/bcg729
+sh ./autogen.sh 
+CFLAGS=-fPIC ./configure --prefix /usr
+make
 
 #orkaudio
 
