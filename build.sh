@@ -24,6 +24,7 @@ cd /opt/bcg729
 sh ./autogen.sh 
 CFLAGS=-fPIC ./configure --prefix /usr
 make
+make install
 
 #orkaudio
 
@@ -34,3 +35,7 @@ make -f Makefile.cvs
 ./configure LIBS='-ldl'
 make
 make install
+
+#ldd
+echo "/usr/lib" > /etc/ld.so.conf.d/usr_lib.conf
+ldconfig

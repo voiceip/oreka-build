@@ -12,12 +12,12 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-  # config.vm.box_check_update = false
+  config.vm.box_check_update = false
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -38,6 +38,9 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "../oreka", "/oreka-src"
+  config.vm.synced_folder "../oreka-g729", "/oreka-g729"
+
+  config.ssh.forward_agent = true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -68,6 +71,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y build-essential libtool automake git tree
-    apt-get install -y libboost-dev libpcap-dev libsndfile1-dev libapr1-dev libspeex-dev liblog4cxx10-dev libace-dev libxerces-c-dev libxerces-c2-dev libopus-dev
+    apt-get install -y libboost-dev libpcap-dev libsndfile1-dev libapr1-dev libspeex-dev liblog4cxx10-dev libace-dev libxerces-c2-dev libopus-dev
   SHELL
 end

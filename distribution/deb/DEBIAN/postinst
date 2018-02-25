@@ -1,0 +1,29 @@
+#!/bin/bash -e
+set -x
+
+if [ "$1" == "configure" ] ; then
+
+if [ ! -f /usr/local/lib/liborkbase.so.0 ]; then
+	ln -s /usr/local/lib/liborkbase.so /usr/local/lib/liborkbase.so.0
+fi
+
+if [ ! -f /usr/local/lib/libbcg729.so.0 ]; then
+	ln -s /usr/local/lib/libbcg729.so /usr/local/lib/libbcg729.so.0
+fi
+
+if [ ! -f /usr/lib/libgenerator.so.0 ]; then
+	ln -s /usr/lib/libgenerator.so /usr/lib/libgenerator.so.0
+fi
+
+if [ ! -f  /usr/lib/libvoip.so.0 ]; then
+	ln -s  /usr/lib/libvoip.so  /usr/lib/libvoip.so.0
+fi
+
+ldconfig
+
+mkdir -p /var/log/orkaudio
+mkdir -p  /var/log/orkaudio/svclog
+
+fi
+
+exit 0
