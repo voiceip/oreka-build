@@ -1,8 +1,6 @@
-#!/bin/bash -e
-
+#!/bin/bash
 set -x
-
 exec 2>&1
 
 # exec chpst -u USER COMMAND
-exec /usr/sbin/orkaudio debug
+exec /usr/sbin/orkaudio

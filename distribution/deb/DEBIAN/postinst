@@ -24,6 +24,9 @@ ldconfig
 mkdir -p /var/log/orkaudio
 mkdir -p  /var/log/orkaudio/svclog
 
+echo "Starting orkaudio...."
+sv start orkaudio
+
 fi
 
 exit 0
