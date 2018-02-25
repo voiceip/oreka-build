@@ -3,3 +3,4 @@ audio
 recordings
 *.deb
 *.log
+.DS_Store
