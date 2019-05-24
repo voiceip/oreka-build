@@ -12,7 +12,7 @@ cp /oreka-src/orkaudio/orkaudio  $BUILD_ROOT/usr/sbin/orkaudio
 cp /usr/lib/libbcg729.so  $BUILD_ROOT/usr/local/lib/libbcg729.so
 cp /usr/lib/liborkbase.so  $BUILD_ROOT/usr/local/lib/liborkbase.so
 cp /oreka-src/orkaudio/audiocaptureplugins/voip/.libs/{libvoip.so,libvoip.la} $BUILD_ROOT/usr/lib/
-cp /usr/lib/{libgenerator.so,libgenerator.la} $BUILD_ROOT/usr/lib/
+cp /oreka-src/orkaudio/audiocaptureplugins/generator/.libs/{libgenerator.so,libgenerator.la} $BUILD_ROOT/usr/lib/
 
 cp /oreka-src/orkaudio/plugins/*.so  $BUILD_ROOT/usr/lib/orkaudio/plugins/
 

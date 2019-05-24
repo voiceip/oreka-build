@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #build silk dependency
 mkdir -p /opt/silk
@@ -6,13 +7,28 @@ git clone --depth 1 https://github.com/gaozehua/SILKCodec.git /opt/silk/SILKCode
 cd /opt/silk/SILKCodec/SILK_SDK_SRC_FIX
 CFLAGS='-fPIC' make all
 
+cd /opt
+
+mkdir -p /opt/opus
+git clone  https://github.com/xiph/opus.git /opt/opus
+cd /opt/opus
+git checkout v1.2.1
+./autogen.sh
+./configure --enable-shared --with-pic --enable-static
+# ./configure --disable-shared --with-pic --enable-static
+make
+make install
+
+# ln -s /usr/local/lib/libopus.a /usr/local/lib/libopusstatic.a
+ln -s /usr/local/lib/libopus.so /usr/local/lib/libopusstatic.so
+
+##some hack fix
+ln -s /usr/include/opus /opt/opus/include/opus
 
 #make orkbase
 cd /oreka-src/orkbasecxx
-libtoolize --force
-automake -a
-make -f Makefile.cvs
-./configure
+autoreconf -i
+./configure CXX=g++
 make
 make install
 
@@ -29,10 +45,8 @@ make install
 #orkaudio
 
 cd /oreka-src/orkaudio
-libtoolize --force
-automake -a
-make -f Makefile.cvs
-./configure LIBS='-ldl'
+autoreconf -i
+./configure CXX=g++
 make
 make install
 

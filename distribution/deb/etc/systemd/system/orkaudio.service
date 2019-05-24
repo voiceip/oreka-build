@@ -1,0 +1,21 @@
+[Unit]
+Description=Oreka Audio Recorder
+After=network.target
+
+[Service]
+Type=forking
+User=root
+ExecStartPre=/usr/bin/logger "Starting Oreka Audio Recorder"
+ExecStart=/usr/sbin/orkaudio
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=control-group
+PIDFile=/var/log/orkaudio/orkaudio.lock
+Restart=on-failure
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=orkaudio
+
+
+[Install]
+WantedBy=multi-user.target
