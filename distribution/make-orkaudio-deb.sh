@@ -3,7 +3,7 @@ set -x
 
 BUILD_ROOT=$(mktemp -d)
 VERSION=$(date +%s)
-cp -r deb/* $BUILD_ROOT/
+cp -r deb/orkaudio/* $BUILD_ROOT/
 
 mkdir -p $BUILD_ROOT/usr/sbin
 mkdir -p $BUILD_ROOT/usr/lib/orkaudio/plugins
