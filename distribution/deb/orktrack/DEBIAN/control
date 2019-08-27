@@ -1,0 +1,8 @@
+Package: orktrack
+Version: 1._VERSION_
+Architecture: all
+Section: base
+Priority: standard
+Depends: tomcat8
+Maintainer: Kinshuk Bairagi <me@kinshuk.in>
+Description: Oreka Tracker

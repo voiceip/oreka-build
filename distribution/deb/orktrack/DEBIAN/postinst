@@ -1,0 +1,7 @@
+#!/bin/bash -e
+
+if [ "$1" == "configure" ] ; then
+	service tomcat8 restart
+fi
+
+exit 0
