@@ -37,8 +37,7 @@ make install
 mkdir -p /opt/bcg729
 git clone --depth 1 https://github.com/BelledonneCommunications/bcg729.git /opt/bcg729
 cd /opt/bcg729
-sh ./autogen.sh 
-CFLAGS=-fPIC ./configure --prefix /usr
+cmake . -DCMAKE_INSTALL_PREFIX=/usr
 make
 make install
 
