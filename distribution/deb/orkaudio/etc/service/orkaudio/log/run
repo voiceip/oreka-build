@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec multilog t s99999 n10 /var/log/orkaudio/svclog

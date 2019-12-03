@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y build-essential libtool automake git tree rpm 
+    apt-get install -y build-essential libtool automake git tree rpm cmake
     apt-get install -y libboost-dev libpcap-dev libsndfile1-dev libapr1-dev libspeex-dev liblog4cxx10-dev libace-dev libopus-dev libxerces-c3.1 libxerces-c3-dev libssl-dev
   SHELL
 end

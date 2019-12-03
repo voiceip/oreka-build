@@ -1,4 +1,4 @@
 #!/bin/bash
 set -x
 
-svc -d /etc/service/orkaudio || true
+service orkaudio stop || true
