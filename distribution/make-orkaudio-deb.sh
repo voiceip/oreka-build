@@ -6,6 +6,7 @@ VERSION=$(date +%s)
 cp -r deb/orkaudio/* $BUILD_ROOT/
 
 mkdir -p $BUILD_ROOT/usr/sbin
+mkdir -p $BUILD_ROOT/etc/orkaudio
 mkdir -p $BUILD_ROOT/usr/lib/orkaudio/plugins
 
 cp /oreka-src/orkaudio/orkaudio  $BUILD_ROOT/usr/sbin/orkaudio
@@ -15,6 +16,9 @@ cp /oreka-src/orkaudio/audiocaptureplugins/voip/.libs/{libvoip.so,libvoip.la} $B
 cp /oreka-src/orkaudio/audiocaptureplugins/generator/.libs/{libgenerator.so,libgenerator.la} $BUILD_ROOT/usr/lib/
 
 cp /oreka-src/orkaudio/plugins/*.so  $BUILD_ROOT/usr/lib/orkaudio/plugins/
+
+cp /etc/orkaudio/config.xml $BUILD_ROOT/etc/orkaudio
+cp /etc/orkaudio/logging.properties $BUILD_ROOT/etc/orkaudio
 
 find $BUILD_ROOT -name '.ignore' -delete
 
