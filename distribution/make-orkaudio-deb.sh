@@ -19,6 +19,6 @@ cp /oreka-src/orkaudio/plugins/*.so  $BUILD_ROOT/usr/lib/orkaudio/plugins/
 find $BUILD_ROOT -name '.ignore' -delete
 
 sed -i "s/_VERSION_/$VERSION/g" $BUILD_ROOT/DEBIAN/control
-dpkg-deb --build $BUILD_ROOT oreka.deb
+dpkg-deb --build $BUILD_ROOT orkaudio.deb
 
 rm -rf $BUILD_ROOT

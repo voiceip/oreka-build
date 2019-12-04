@@ -22,11 +22,13 @@ cd distribution
 ### Running
 
 ```
-#start
-service orkaudio start
+##start
+sudo svc -u /etc/service/orkaudio
+# service orkaudio start
 
-#stop
-service orkaudio stop
+##stop
+sudo svc -d /etc/service/orkaudio
+# service orkaudio stop
 
 ```
 

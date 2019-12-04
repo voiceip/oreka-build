@@ -22,9 +22,10 @@ fi
 ldconfig
 
 mkdir -p /var/log/orkaudio 
+mkdir -p  /var/log/orkaudio/svclog
 
 echo "Starting orkaudio...."
-service orkaudio start || true
+svc -u /etc/service/orkaudio || true
 
 fi
 
