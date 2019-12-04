@@ -1,8 +1,9 @@
-Package: oreka
+Package: orkaudio
 Version: 1._VERSION_
 Architecture: all
 Section: base
 Priority: standard
 Depends: curl, unzip, libboost-dev, libpcap-dev, libsndfile1-dev, libapr1-dev, libspeex-dev, liblog4cxx10-dev, libace-dev, libopus-dev, libxerces-c3.1, daemontools
-Maintainer: Kinshuk Bairagi <me@kinshuk.in>
+Maintainer: Kinshuk Bairagi <hi@kinsh.uk>
 Description: Audio streams recording daemon (VoIP and Sound Device)
+Replaces: oreka
