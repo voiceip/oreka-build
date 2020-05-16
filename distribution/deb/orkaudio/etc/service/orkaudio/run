@@ -3,7 +3,7 @@ exec 2>&1
 
 exit_script() {
     echo "Shutdown!"
-    CHILD_PID=$(cat /var/log/orkaudio/orkaudio.lock)
+    CHILD_PID=$(cat /var/log/orkaudio/orkaudio.lock | head -n1)
 
     echo "Sending Kill to $CHILD_PID"
     trap - SIGINT SIGTERM # clear the trap
@@ -24,5 +24,5 @@ trap exit_script SIGINT SIGTERM
 /usr/sbin/orkaudio
 
 #watch on pid
-CHILD_PID=$(cat /var/log/orkaudio/orkaudio.lock)
+CHILD_PID=$(cat /var/log/orkaudio/orkaudio.lock | head -1 )
 while kill -0 $CHILD_PID 2> /dev/null; do sleep 1; done;
