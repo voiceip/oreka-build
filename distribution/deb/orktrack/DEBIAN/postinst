@@ -1,6 +1,10 @@
 #!/bin/bash -e
 
 if [ "$1" == "configure" ] ; then
+
+	mkdir -p /var/log/orkweb/
+	chmod 777 /var/log/orkweb/
+
 	service tomcat8 restart
 fi
 
