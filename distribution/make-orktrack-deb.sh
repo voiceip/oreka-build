@@ -7,7 +7,7 @@ cp -r deb/orktrack/* $BUILD_ROOT/
 
 mkdir -p $BUILD_ROOT/var/lib/tomcat8/webapps/
 
-cp orktrack-0.0.1-SNAPSHOT.war $BUILD_ROOT/var/lib/tomcat8/webapps/orktrack.war
+cp orktrack-0.0.2-SNAPSHOT.war $BUILD_ROOT/var/lib/tomcat8/webapps/orktrack.war
 
 
 find $BUILD_ROOT -name '.ignore' -delete

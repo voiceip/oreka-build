@@ -4,3 +4,6 @@ recordings
 *.deb
 *.log
 .DS_Store
+*.wav
+*.deb
+*.zip
