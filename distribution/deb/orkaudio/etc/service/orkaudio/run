@@ -18,6 +18,8 @@ anywait(){
     done
 }
 
+ulimit -n 65535
+
 trap exit_script SIGINT SIGTERM
 
 # exec chpst -u USER COMMAND
