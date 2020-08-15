@@ -20,11 +20,14 @@ anywait(){
 }
 
 ulimit -n 65535
+ulimit -c unlimited
 
 trap exit_script SIGINT SIGTERM
 
 # exec chpst -u USER COMMAND
-/usr/sbin/orkaudio
+export LIBC_FATAL_STDERR_=1
+epoch=$(date +%s)
+SEGFAULT_SIGNALS=all  SEGFAULT_OUTPUT_NAME="/var/log/orkaudio/orkaudio.$epoch.trace" LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so /usr/sbin/orkaudio
 
 #wait 1 sec for child lock to be created.
 sleep 1
