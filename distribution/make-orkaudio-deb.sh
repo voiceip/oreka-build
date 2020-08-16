@@ -2,7 +2,7 @@
 set -ex
 
 BUILD_ROOT=$(mktemp -d)
-VERSION=$(date +%s)
+export VERSION=$(date +%s)
 cp -r deb/orkaudio/* $BUILD_ROOT/
 
 mkdir -p $BUILD_ROOT/usr/sbin
