@@ -1,10 +1,11 @@
 [Unit]
-Description=Oreka Audio Recorder
+Description=Orkaudio Audio Recorder
 After=network.target
 
 [Service]
 Type=forking
 User=root
+Group=root
 ExecStartPre=/usr/bin/logger "Starting Oreka Audio Recorder"
 ExecStart=/usr/sbin/orkaudio
 ExecReload=/bin/kill -HUP $MAINPID
