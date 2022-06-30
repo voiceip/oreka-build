@@ -5,7 +5,8 @@ if [ "$1" == "configure" ] ; then
 	mkdir -p /var/log/orkweb/
 	chmod 777 /var/log/orkweb/
 
-	service tomcat8 restart
+	systemctl is-active --quiet tomcat8 && service tomcat8 restart || true
+        systemctl is-active --quiet tomcat9 && service tomcat9 restart || true
 fi
 
 exit 0
